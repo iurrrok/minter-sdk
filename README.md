@@ -15,9 +15,9 @@ Node U-node didnt exists. I updated this repo to work with Minter 2.0
 
 
 # Installation
-install git 
+install git ,
 install repo by git
-or copy repo 
+or copy repo ,
 start file run_me.py
 
 
