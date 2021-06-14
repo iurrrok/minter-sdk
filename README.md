@@ -24,19 +24,46 @@ start file run_me.py
 
 # Using API
 ```python
+#check balance
 from mintersdk.minterapi import MinterAPI
 
 api= MinterAPI('http://api.minter.one/v2')
 
 wallet ='Mx...................'
 result=api.get_balance(wallet)
-t = result
-print (t)
+print (result)
 ```
+
 Numeric strings automatically are converted to integers in `response['result']` dict.
 
 Some API methods accept `pip2bip (bool)` argument to convert coin values from PIP to BIP.  
 Values are `Decimal` type after conversion.
+
+```python
+#generate new adress
+from mintersdk.sdk.wallet import MinterWallet
+
+result=MinterWallet().create()
+print (result)
+```
+
+
+```python
+#send trx
+from mintersdk.sdk.transactions import MinterSendCoinTx,MinterMultiSendCoinTx,MinterDelegateTx,MinterSellCoinTx,MinterBuyCoinTx
+
+api= MinterAPI('http://api.minter.one/v2')
+
+gnon=api.get_nonce(sender_adress)
+tx = MinterSendCoinTx(to=to_adress,
+                         coin=minter_coin_id, 
+                         value=amoun_coins,
+                         nonce=gnon, 
+                         gas_coin=minter_coin_id)
+tx.sign(sender_private_key)
+result=api.send_transaction(tx.signed_tx)
+print(result)
+```
 
 ## Methods
 - `get_addresses(addresses, height=None, pip2bip=False)`  
