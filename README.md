@@ -27,7 +27,7 @@ start file run_me.py
 #check balance
 from mintersdk.minterapi import MinterAPI
 
-api= MinterAPI('http://api.minter.one/v2')
+api= MinterAPI('свежий линк всегда можно спросить тут https://t.me/MinterDevChat')
 
 wallet ='Mx...................'
 result=api.get_balance(wallet)
@@ -52,7 +52,7 @@ print (result)
 #send trx
 from mintersdk.sdk.transactions import MinterSendCoinTx,MinterMultiSendCoinTx,MinterDelegateTx,MinterSellCoinTx,MinterBuyCoinTx
 
-api= MinterAPI('http://api.minter.one/v2')
+api= MinterAPI('свежий линк всегда можно спросить тут https://t.me/MinterDevChat')
 
 gnon=api.get_nonce(sender_adress)
 tx = MinterSendCoinTx(to=to_adress,
