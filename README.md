@@ -9,13 +9,16 @@ Ported from official Minter's <a href="https://github.com/MinterTeam/minter-php-
 
 Created by <a href="https://www.u-node.net">https://www.u-node.net</a>'s masternode co-founder Roman Matusevich 
 
-You can support our project by sending any Minter's coins to our wallet Mx6e0cd64694b1e143adaa7d4914080e748837aec9
+You can support our project by sending any Minter's coins to our wallet Mx497eeb6ebfb1ae21f5454351c69b6741e34fe9ef
 
-Feel free to delegate to our 3% masternode Mp02bc3c3f77d5ab9732ef9fc3801a6d72dc18f88328c14dc735648abfe551f50f
+Node U-node didnt exists. I updated this repo to work with Minter 2.0
 
 
 # Installation
-`pip install minter-sdk`
+install git 
+install repo by git
+or copy repo 
+start file run_me.py
 
 
 
@@ -23,11 +26,12 @@ Feel free to delegate to our 3% masternode Mp02bc3c3f77d5ab9732ef9fc3801a6d72dc1
 ```python
 from mintersdk.minterapi import MinterAPI
 
-node_url = 'https://minter-node-1.testnet.minter.network:8841'  # Example of a node url
-api = MinterAPI(api_url=node_url)
+api= MinterAPI('http://api.minter.one/v2')
 
-# 'connect_timeout', 'read_timeout', 'headers' kwargs would be passed to request, if provided
-api = MinterAPI(api_url=node_url, connect_timeout=1, read_timeout=3, headers={})
+wallet ='Mx...................'
+result=api.get_balance(wallet)
+t = result
+print (t)
 ```
 Numeric strings automatically are converted to integers in `response['result']` dict.
 
